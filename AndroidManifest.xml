@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="extrace.ui.main"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_LOGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:name=".ExTraceApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="extrace.ui.misc.CustomerListActivity"
+            android:label="@string/title_activity_customer_list" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="extrace.ui.misc.CustomerEditActivity"
+            android:label="@string/title_activity_customer_edit" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- category android:name="android.intent.category.LAUNCHER" / -->
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="extrace.ui.misc.CustomerListActivity" />
+        </activity>
+        <activity
+            android:name="extrace.ui.misc.RegionListActivity"
+            android:label="@string/title_activity_region_list" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- category android:name="android.intent.category.LAUNCHER" / -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="zxing.util.CaptureActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="extrace.ui.domain.ExpressEditActivity"
+            android:label="@string/title_activity_express_edit" >
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+
+        <service android:name="extrace.service.BackGroundLocation" >
+            <intent-filter>
+                <action android:name="extrace.service.BackGroundLocation" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
+        <service android:name="extrace.service.MessageService" >
+        </service>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="h7qRfqzaempjUTiQAI8MGZFjilDPk1CN" />
+
+        <activity
+            android:name="extrace.ui.domain.MyLocationActivity"
+            android:label="@string/title_activity_my_location" >
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name="extrace.ui.domain.PackageAddActivity"
+            android:label="@string/title_activity_package_add" >
+        </activity>
+        <activity
+            android:name="extrace.ui.domain.PackageEditActivity"
+            android:label="@string/title_activity_package_edit" >
+        </activity>
+        <activity
+            android:name="extrace.ui.domain.MessageActivity"
+            android:label="@string/title_activity_message" >
+        </activity>
+        <activity
+            android:name="extrace.ui.domain.SendMessageActivity"
+            android:label="@string/shangmen_recv" >
+        </activity>
+        <activity
+            android:name=".MypackageActivity"
+            android:label="@string/title_activity_mypackage" >
+        </activity>
+        <activity
+            android:name=".MypackageContentActivity"
+            android:label="@string/title_activity_mypackage_content" >
+        </activity>
+        <activity
+            android:name=".MypackageHistoryActivity"
+            android:label="@string/title_activity_mypackage_history" >
+        </activity>
+        <activity
+            android:name=".MypackageInActivity"
+            android:label="@string/title_activity_mypackage_in" >
+        </activity>
+        <activity
+            android:name=".HistoryMainActivity"
+            android:label="@string/title_activity_history_main" >
+        </activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+       	
+    </application>
+
+</manifest>

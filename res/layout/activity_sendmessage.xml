@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkorange"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        style="@color/darkslategray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.51"
+        android:background="@color/white"
+        android:focusable="true" >
+
+        <EditText
+            android:id="@+id/custel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/teltip"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/editsharp"
+            android:ems="10"
+            android:textAppearance="?android:attr/textAppearanceMedium" >
+
+            <requestFocus />
+        </EditText>
+
+        <CheckBox
+            android:id="@+id/issave_custel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/custel"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@android:string/ok"
+            android:text="保存手机号" />
+
+        <TextView
+            android:id="@+id/teltip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@android:string/ok"
+            android:text="请输入手机号"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <Button
+            android:id="@+id/sendbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/issave_custel"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/cornerbutton"
+            android:gravity="center"
+            android:text="@string/button_sendmsg" 
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="90dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
